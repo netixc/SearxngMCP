@@ -42,36 +42,23 @@ openssl rand -hex 32
 
 **3. Start SearXNG instance:**
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 SearXNG will be available at `http://YOUR_IP:8080`
 
 **4. Install MCP server (using UV - recommended):**
 ```bash
-# Install UV if needed
-pip install uv
-
 # Create venv and install
 uv venv
 source .venv/bin/activate  # Linux/macOS
 uv pip install -e ".[dev]"
 ```
 
-**Alternative (using pip):**
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-```
-
 **5. Verify installation:**
 ```bash
 # Check SearXNG is running
 curl http://YOUR_IP:8080
-
-# Test MCP server import
-python -c "import searxng_mcp; print('MCP server OK')"
 ```
 
 ## ⚙️ Configuration
@@ -331,13 +318,6 @@ SearxngMCP/
 ├── pyproject.toml              # Dependencies
 └── README.md
 ```
-
-## 🔒 Privacy & Security
-
-- **No tracking** - SearXNG doesn't track searches or users
-- **Self-hosted** - Your instance, your control
-- **No API keys** - No third-party API dependencies
-- **Local network** - Runs on your LAN (192.168.50.67)
 
 ## 📄 License
 
