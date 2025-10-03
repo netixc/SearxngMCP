@@ -1,0 +1,11 @@
+{
+  "searxng": {
+    "url": "http://YOUR_IP:8080",
+    "timeout": 10
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": null
+  }
+}

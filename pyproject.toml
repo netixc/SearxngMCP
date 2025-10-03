@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "searxng-mcp"
+version = "0.1.0"
+description = "A Model Context Protocol server for SearXNG metasearch engine"
+requires-python = ">=3.10"
+authors = [
+    {name = "Kevin", email = "kevin@example.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["searxng", "mcp", "search", "metasearch", "claude", "privacy"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+
+dependencies = [
+    "mcp @ git+https://github.com/modelcontextprotocol/python-sdk.git",
+    "requests>=2.31.0,<3.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0,<8.0.0",
+    "black>=23.0.0,<24.0.0",
+    "mypy>=1.0.0,<2.0.0",
+    "pytest-asyncio>=0.21.0,<0.22.0",
+    "ruff>=0.1.0,<0.2.0",
+    "types-requests>=2.31.0,<3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/netixc/SearxngMCP"
+Documentation = "https://github.com/netixc/SearxngMCP#readme"
+Repository = "https://github.com/netixc/SearxngMCP.git"
+Issues = "https://github.com/netixc/SearxngMCP/issues"
+
+[project.scripts]
+searxng-mcp = "searxng_mcp.server:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v"
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.ruff]
+select = ["E", "F", "B", "I"]
+ignore = []
+line-length = 100
+target-version = "py310"
