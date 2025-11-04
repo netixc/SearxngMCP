@@ -3,7 +3,7 @@
 A privacy-focused Model Context Protocol (MCP) server that provides Claude with web search capabilities through [SearXNG](https://github.com/searxng/searxng) metasearch engine.
 
 <a href="https://glama.ai/mcp/servers/@netixc/SearxngMCP">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/@netixc/SearxngMCP/badge" alt="SearXNG Server MCP server" />
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@netixc/SearxngMCP/badge" />
 </a>
 
 ## ✨ Features
